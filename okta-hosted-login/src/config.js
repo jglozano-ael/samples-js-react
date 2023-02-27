@@ -16,13 +16,14 @@ const OKTA_TESTING_DISABLEHTTPSCHECK = process.env.OKTA_TESTING_DISABLEHTTPSCHEC
 const BASENAME = import.meta.env.BASE_URL || '';
 // BASENAME includes trailing slash
 const REDIRECT_URI = `${window.location.origin}${BASENAME}login/callback`;
+const SCOPES = ['openid', 'profile', 'email', 'offline_access'];
 
 export default {
   oidc: {
     clientId: CLIENT_ID,
     issuer: ISSUER,
     redirectUri: REDIRECT_URI,
-    scopes: ['openid', 'profile', 'email'],
+    scopes: SCOPES,
     pkce: true,
     disableHttpsCheck: OKTA_TESTING_DISABLEHTTPSCHECK,
   },
