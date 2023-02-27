@@ -19,3 +19,4 @@ testenv
 .idea/
 yalc.lock
 .eslintcache
+testenv
