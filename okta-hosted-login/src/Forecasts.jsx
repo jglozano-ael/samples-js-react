@@ -22,7 +22,7 @@ const Forecasts = () => {
   useEffect(() => {
       fetch(apiUri, {
         headers: {
-          Authorization: 'Bearer ' + authState.accessToken.accessToken
+          Authorization: 'Bearer ' + oktaAuth.getAccessToken()
         }
       })
       .then(resp => resp.json())
